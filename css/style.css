@@ -2,6 +2,7 @@
 :root{
     --cor-background-cabecalho: rgb(243, 3, 3);
     --cor-h1: rgb(179 178 165);
+    --cor-fundo-tipos: rgb(100 100 100);
 }
 
 /* ----- cabeçalho ----- */
@@ -26,6 +27,53 @@ header{
     }
 
 /* ----- principal ----- */
+main{}
+
+    nav{
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: left;
+    }
+
+        nav button{
+            position: absolute;
+            top: 0;
+            left: 85px;
+        }
+
+        .opcoesTipos{
+            display: block;
+            width: 75px;
+            margin-right: 10px;
+        }
+
+        .opcoesTipos p{
+            display: flex;
+            align-items: center;
+            justify-content: left;
+            width: 75px;
+            /* margin-right: 10px; */
+            /* box-shadow: 1px 1px 1px var(--cor-fundo-tipos); */
+            position: relative;
+        }
+
+        .opcoesTipos p ion-icon{
+            position: absolute;
+            right: 0;
+        }
+
+
+
+        main nav .tipos{
+            box-shadow: 1px 1px 1px var(--cor-fundo-tipos);
+            width: 75px;
+            display: none;
+        }
+
+        .tipos.ativado{
+            display: block;
+        }
 
 
 /* -----  rodapé   ----- */
