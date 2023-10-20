@@ -1,41 +1,31 @@
+/* ----- gearal ----- */
 :root{
-    --cor-header: rgb(165, 95, 2);
-    --cor-fundo-opcoes: rgb(34, 210, 216);
-    --cor-fundo-opcoes-selecionado: rgb(38, 177, 170);
+    --cor-background-cabecalho: rgb(243, 3, 3);
+    --cor-h1: rgb(179 178 165);
 }
 
+/* ----- cabeçalho ----- */
 header{
     display: flex;
-    /* align-items: center; */
+    align-items: center;
     justify-content: center;
-    background-color: var(--cor-header);
-    height: 40px;
+    height: 70px;
+    width: 100%;
+    background-color: var(--cor-background-cabecalho);
+
 }
 
-header nav{
-    position: relative;
-}
+    header h1{
+        font-size: 20px;
+        font-weight: 700;
+        font-family: 'Alumni Sans Collegiate One', sans-serif;
+        font-family: 'Righteous', sans-serif;
+        font-family: 'Roboto', sans-serif;
+        text-shadow: 1px 1px 1px rgb(221, 86, 86);
+        color: var(--cor-h1);
+    }
 
-header nav ion-icon{
-    position: absolute;
-    right: 0;
-}
-header nav .tipo{
-    position: relative;
-    display: flex;
-    width: 100px;
-    height: 20px;
-    margin-top: 10px;
-    background-color: var(--cor-fundo-opcoes);
-}
+/* ----- principal ----- */
 
 
-
-.dropDown{
-    background-color: var(--cor-fundo-opcoes);
-    box-shadow: 1px 1px 1px rgb(36, 36, 36);
-}
-
-.dropDown p:hover{
-    background-color: var(--cor-fundo-opcoes-selecionado);
-}
+/* -----  rodapé   ----- */
