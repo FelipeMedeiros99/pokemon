@@ -1,0 +1,41 @@
+:root{
+    --cor-header: rgb(165, 95, 2);
+    --cor-fundo-opcoes: rgb(34, 210, 216);
+    --cor-fundo-opcoes-selecionado: rgb(38, 177, 170);
+}
+
+header{
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    background-color: var(--cor-header);
+    height: 40px;
+}
+
+header nav{
+    position: relative;
+}
+
+header nav ion-icon{
+    position: absolute;
+    right: 0;
+}
+header nav .tipo{
+    position: relative;
+    display: flex;
+    width: 100px;
+    height: 20px;
+    margin-top: 10px;
+    background-color: var(--cor-fundo-opcoes);
+}
+
+
+
+.dropDown{
+    background-color: var(--cor-fundo-opcoes);
+    box-shadow: 1px 1px 1px rgb(36, 36, 36);
+}
+
+.dropDown p:hover{
+    background-color: var(--cor-fundo-opcoes-selecionado);
+}
