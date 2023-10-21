@@ -5,7 +5,7 @@ const tiposPokemonsIngles = ["--types--", "Fire", "Water", "Grass", "Electric", 
 const tipos = document.querySelector('.tipos')
 const elementoSelecionado = document.querySelector('.elementoSelecionado')
 let article = document.querySelector('article')
-let siteGeral = "https://pokeapi.co/api/v2/pokemon/?offset=0&limit=15"
+let siteGeral = "https://pokeapi.co/api/v2/pokemon/?offset=0&limit=20"
 let listaLinksDosPokemons = []
 let listaLinksDosPokemonsFiltrados = []
 
@@ -137,10 +137,14 @@ function filtrarTipo(){
 
     let tipoParaFiltrar= document.querySelector(".elementoSelecionado").innerText
     let tiposDosPokemonsdaTela = document.querySelectorAll('.caixaPokemon')
-    for (let i = 0; i < tiposDosPokemonsdaTela.length; i++){       
-        let tipoDoPokemon = tiposDosPokemonsdaTela[i].querySelector('.tipo').innerText 
-        if (tipoDoPokemon !== `tipo: ${tipoParaFiltrar}`){
-            tiposDosPokemonsdaTela[i].classList.add('ocultar')
+    
+    if (tipoParaFiltrar === "--"){
+    }else{
+        for (let i = 0; i < tiposDosPokemonsdaTela.length; i++){       
+            let tipoDoPokemon = tiposDosPokemonsdaTela[i].querySelector('.tipo').innerText 
+            if (tipoDoPokemon !== `tipo: ${tipoParaFiltrar}`){
+                tiposDosPokemonsdaTela[i].classList.add('ocultar')
+            }
         }
     }
 }

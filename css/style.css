@@ -1,11 +1,13 @@
 /* ----- gearal ----- */
 :root{
-    --cor-background-cabecalho: rgb(243, 3, 3);
+    --cor-background-cabecalho: rgb(136 170 249);
     --cor-h1: rgb(179 178 165);
     --cor-fundo-tipos: rgb(204, 204, 204);
     --cor-fundo-tipos-selecionado: rgb(201, 4, 4);
     --cor-fundo-botao-selecionado: rgb(117, 101, 101);
+    --cor-de-fundo-caixa: rgb(255, 255, 255, 0.5);
 }
+
 
 /* ----- cabeçalho ----- */
 header{
@@ -14,20 +16,15 @@ header{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 70px;
+    height: 150px;
     width: 100%;
     background-color: var(--cor-background-cabecalho);
 
 }
 
-    header h1{
-        font-size: 20px;
-        font-weight: 700;
-        font-family: 'Alumni Sans Collegiate One', sans-serif;
-        font-family: 'Righteous', sans-serif;
-        font-family: 'Roboto', sans-serif;
-        text-shadow: 1px 1px 1px rgb(221, 86, 86);
-        color: var(--cor-h1);
+
+    header img{
+        width: 300px;
     }
 
 
@@ -35,6 +32,13 @@ header{
 /* ----- principal ----- */
 main{
     position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url('/imagens/wallpaper-56.jpg');
+    background-position: center;
+    background-attachment: fixed;
+    /* background-size: cover; */
 }
 
 
@@ -42,7 +46,7 @@ nav{
     width: 165px;
     box-sizing: content-box;
     position: relative;
-    top: 0px;
+    top: 10px;
     display: flex;
     align-items: center;
     z-index: 2;
@@ -127,7 +131,7 @@ nav{
 
 
 article{
-    position: absolute;
+    /* position: absolute; */
     margin-top: 20px;
     box-sizing: border-box;
     display: flex;
@@ -140,11 +144,14 @@ article{
     .caixaPokemon{
         display: flex;
         align-items: center;
+        justify-content: center;
         flex-direction: column;
         border: outset;
         margin-right: 3px;
         margin-bottom: 3px;
-        width: 100px;
+        width: 120px;
+        height: 120px;
+        background-color: var(--cor-de-fundo-caixa);
     }
 
     article img{
