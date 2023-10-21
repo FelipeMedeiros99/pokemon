@@ -4,11 +4,14 @@
     --cor-h1: rgb(179 178 165);
     --cor-fundo-tipos: rgb(204, 204, 204);
     --cor-fundo-tipos-selecionado: rgb(201, 4, 4);
+    --cor-fundo-botao-selecionado: rgb(117, 101, 101);
 }
 
 /* ----- cabeçalho ----- */
 header{
+    position: relative;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     height: 70px;
@@ -27,60 +30,72 @@ header{
         color: var(--cor-h1);
     }
 
-/* ----- principal ----- */
-main{
-    position: relative;
-}
 
     nav{
+        width: 130px;
         position: absolute;
-        top: 0;
+        bottom: 3px;
         display: flex;
         align-items: center;
-        justify-content: left;
+        /* justify-content: left; */
         z-index: 2;
     }
 
-        nav button{
-            position: absolute;
-            top: 0;
-            left: 85px;
-        }
-
         .opcoesTipos{
-            width: 75px;
             margin-right: 10px;
         }
 
+            .opcoesTipos p{
+                background-color: var(--cor-fundo-tipos);
+                display: flex;
+                align-items: center;
+                justify-content: left;
+                width: 75px;
+                position: relative;
+            }
+
+    .opcoesTipos p ion-icon{
+        position: absolute;
+        right: 0;
+    }
+
         .opcoesTipos p{
-            background-color: var(--cor-fundo-tipos);
-            display: flex;
-            align-items: center;
-            justify-content: left;
-            width: 75px;
-            position: relative;
+            border: outset;
         }
 
-        .opcoesTipos p ion-icon{
+        nav button{
             position: absolute;
-            right: 0;
+            left: 85px;
+            border: outset;
         }
 
-        .tipos{
+        nav button:hover{
+            background-color: var(--cor-fundo-botao-selecionado);
+            border-color: var(--cor-fundo-botao-selecionado);
+        }
+
+        .tipos{   
             background-color: var(--cor-fundo-tipos);
             box-shadow: 1px 1px 1px var(--cor-fundo-tipos);
             width: 75px;
             display: none;
+
         }
 
         .tipos.ativado{
+            position: absolute;
             display: block;
         }
 
         .opcoesTipos p:hover{
             background-color: var(--cor-fundo-tipos-selecionado);
+            border-color: var(--cor-fundo-tipos-selecionado)
         }
 
+/* ----- principal ----- */
+main{
+    position: relative;
+}
 
 article{
     position: absolute;

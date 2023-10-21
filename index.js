@@ -13,7 +13,7 @@ const elementoSelecionado = document.querySelector('.elementoSelecionado')
 let article = document.querySelector('article')
 
 // site geral dos pokemons
-let siteGeral = "https://pokeapi.co/api/v2/pokemon/?offset=20&limit=100"
+let siteGeral = "https://pokeapi.co/api/v2/pokemon/?offset=0&limit=50"
 let listaLinksDosPokemons = []
 
 // ----------- funções ------------//
