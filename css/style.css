@@ -203,4 +203,24 @@ article{
         display: none;
     }
 
+@media (max-width: 465px) {
+    .qtDePokemonsParaExibir{
+        position: absolute;
+        bottom: 0;
+    }
+    
+    .qtDePokemonsParaExibir p{
+        font-size: 15px;
+    }
+    header img{
+        position: absolute;
+        top: 20px;
+        width: 200px;
+    }
+
+
+    
+}
+
+
 /* -----  rodapé   ----- */
