@@ -1,20 +1,13 @@
 // ----------- variaveis ----------//
-const tiposPokemons = [
-    "--", "Fogo", "Água", "Grama", "Elétrico", "Terra", "Voador", "Gelo", "Pedra", "Aço", "Normal", "Lutador", "Fantasma", "Sombrio", "Venenoso", "Dragão", "Fada", "Inseto", "Psíquico"
-]
-
+const tiposPokemons = ["--", "Fogo", "Água", "Grama", "Elétrico", "Terra", "Voador", "Gelo", "Pedra", "Aço", "Normal", "Lutador", "Fantasma", "Sombrio", "Venenoso", "Dragão", "Fada", "Inseto", "Psíquico"]
 const tiposPokemonsIngles = ["--types--", "Fire", "Water", "Grass", "Electric", "Ground", "Flying", "Ice", "Rock", "Steel", "Normal", "Fighting", "Ghost", "Dark", "Poison", "Dragon", "Fairy", "Bug", "Psychic"]
 
-
 const tipos = document.querySelector('.tipos')
-
 const elementoSelecionado = document.querySelector('.elementoSelecionado')
-
 let article = document.querySelector('article')
-
-// site geral dos pokemons
 let siteGeral = "https://pokeapi.co/api/v2/pokemon/?offset=0&limit=15"
 let listaLinksDosPokemons = []
+let listaLinksDosPokemonsFiltrados = []
 
 // ----------- funções ------------//
 
@@ -99,6 +92,15 @@ function traduzir(palavra){
     }  
 }
 
+function destraduzir(palavra){
+    for (let i = 0; i < tiposPokemons.length; i++){
+        // console.log(primeiraLetraMaiuscula(palavra))
+        if (primeiraLetraMaiuscula(palavra) === tiposPokemonsIngles[i]){
+            return tiposPokemonsIngles[i]
+        }
+    }
+}
+
 function primeiraLetraMaiuscula(palavra){
     let letras = []
     for (let i = 0; i< palavra.length; i ++){
@@ -113,6 +115,7 @@ function mostrarPokemonNaPagina(){
     let promessa = axios.get(siteGeral)
     promessa.then(criaPagina)
     promessa.catch(mostraErroDaAPI)
+
 }
 
 // funções para alterar a quantidade de pokemons exibida
@@ -125,6 +128,25 @@ function alteraLinkDeExibicao(){
     mostrarPokemonNaPagina()    
 }
 
+// filltrando tipos
+function filtrarTipo(){
+    // desolcultando tudo:
+    let itensOcultos = document.querySelectorAll('.ocultar')
+    itensOcultos.forEach(function(elemento){elemento.classList.remove('ocultar')})
+
+
+    let tipoParaFiltrar= document.querySelector(".elementoSelecionado").innerText
+    let tiposDosPokemonsdaTela = document.querySelectorAll('.caixaPokemon')
+    for (let i = 0; i < tiposDosPokemonsdaTela.length; i++){       
+        let tipoDoPokemon = tiposDosPokemonsdaTela[i].querySelector('.tipo').innerText 
+        if (tipoDoPokemon !== `tipo: ${tipoParaFiltrar}`){
+            tiposDosPokemonsdaTela[i].classList.add('ocultar')
+        }
+    }
+}
+
+
+
 // -------- código principal ------//
 
 // criando as opções da barra de tipos
@@ -133,5 +155,3 @@ criarNavBar()
 //  testando a API
 mostrarPokemonNaPagina()
 
-
-// setInterval(function(){console.log(siteGeral)}, 1000)

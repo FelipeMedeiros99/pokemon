@@ -31,96 +31,100 @@ header{
     }
 
 
-    nav{
-        width: 165px;
-        box-sizing: content-box;
-        position: absolute;
-        bottom: 3px;
-        display: flex;
-        align-items: center;
-        z-index: 2;
-    }
-
-
-        .filtro{
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-            .filtro span{
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            }
-
-        .opcoesTipos{
-            /* display: f   lex; */
-            /* align-items: center; */
-            /* justify-content: center; */
-            /* margin-right: 10px; */
-        }
-
-            .elementoSelecionado{
-                width: 100px
-            }
-
-            .opcoesTipos p{
-                background-color: var(--cor-fundo-tipos);
-                display: flex;
-                align-items: center;
-                justify-content: left;
-                width: 110px;
-                position: relative;
-            }
-
-    .opcoesTipos p ion-icon{
-        position: absolute;
-        right: 0;        
-    }
-
-        .opcoesTipos p{
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 0;
-            border: outset;
-
-        }
-
-        nav button{
-            position: absolute;
-            right: 0px;
-            border: outset;
-        }
-
-        nav button:hover{
-            background-color: var(--cor-fundo-botao-selecionado);
-            border-color: var(--cor-fundo-botao-selecionado);
-        }
-
-        .tipos{   
-            background-color: var(--cor-fundo-tipos);
-            box-shadow: 1px 1px 1px var(--cor-fundo-tipos);
-            width: 75px;
-            display: none;
-
-        }
-
-        .tipos.ativado{
-            position: absolute;
-            display: block;
-        }
-
-        .opcoesTipos p:hover{
-            background-color: var(--cor-fundo-tipos-selecionado);
-            border-color: var(--cor-fundo-tipos-selecionado)
-        }
-
+    
 /* ----- principal ----- */
 main{
     position: relative;
 }
+
+
+nav{
+    width: 165px;
+    box-sizing: content-box;
+    position: relative;
+    top: 0px;
+    display: flex;
+    align-items: center;
+    z-index: 2;
+}
+
+
+    .filtro{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+        .filtro span{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+    .opcoesTipos{
+        /* display: f   lex; */
+        /* align-items: center; */
+        /* justify-content: center; */
+        /* margin-right: 10px; */
+    }
+
+        .elementoSelecionado{
+            width: 100px
+        }
+
+        .opcoesTipos p{
+            background-color: var(--cor-fundo-tipos);
+            display: flex;
+            align-items: center;
+            justify-content: left;
+            width: 110px;
+            position: relative;
+        }
+
+.opcoesTipos p ion-icon{
+    position: absolute;
+    right: 0;        
+}
+
+    .opcoesTipos p{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 0;
+        border: outset;
+
+    }
+
+    nav button{
+        position: absolute;
+        right: 0px;
+        border: outset;
+    }
+
+    nav button:hover{
+        background-color: var(--cor-fundo-botao-selecionado);
+        border-color: var(--cor-fundo-botao-selecionado);
+    }
+
+    .tipos{   
+        background-color: var(--cor-fundo-tipos);
+        box-shadow: 1px 1px 1px var(--cor-fundo-tipos);
+        width: 75px;
+        display: none;
+
+    }
+
+    .tipos.ativado{
+        position: absolute;
+        display: block;
+    }
+
+    .opcoesTipos p:hover{
+        background-color: var(--cor-fundo-tipos-selecionado);
+        border-color: var(--cor-fundo-tipos-selecionado)
+    }
+
+
 
 article{
     position: absolute;
@@ -146,6 +150,10 @@ article{
     article img{
         width: 75px;
         height: 75px;
+    }
+
+    .ocultar{
+        display: none;
     }
 
 /* -----  rodapé   ----- */
