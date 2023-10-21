@@ -1,9 +1,9 @@
 // ----------- variaveis ----------//
 const tiposPokemons = [
-    "Fogo", "Água", "Grama", "Elétrico", "Terra", "Voador", "Gelo", "Pedra", "Aço", "Normal", "Lutador", "Fantasma", "Sombrio", "Venenoso", "Dragão", "Fada", "Inseto", "Psíquico"
+    "--", "Fogo", "Água", "Grama", "Elétrico", "Terra", "Voador", "Gelo", "Pedra", "Aço", "Normal", "Lutador", "Fantasma", "Sombrio", "Venenoso", "Dragão", "Fada", "Inseto", "Psíquico"
 ]
 
-const tiposPokemonsIngles = ["Fire", "Water", "Grass", "Electric", "Ground", "Flying", "Ice", "Rock", "Steel", "Normal", "Fighting", "Ghost", "Dark", "Poison", "Dragon", "Fairy", "Bug", "Psychic"]
+const tiposPokemonsIngles = ["--types--", "Fire", "Water", "Grass", "Electric", "Ground", "Flying", "Ice", "Rock", "Steel", "Normal", "Fighting", "Ghost", "Dark", "Poison", "Dragon", "Fairy", "Bug", "Psychic"]
 
 
 const tipos = document.querySelector('.tipos')
@@ -13,7 +13,7 @@ const elementoSelecionado = document.querySelector('.elementoSelecionado')
 let article = document.querySelector('article')
 
 // site geral dos pokemons
-let siteGeral = "https://pokeapi.co/api/v2/pokemon/?offset=0&limit=50"
+let siteGeral = "https://pokeapi.co/api/v2/pokemon/?offset=0&limit=15"
 let listaLinksDosPokemons = []
 
 // ----------- funções ------------//
@@ -45,8 +45,7 @@ function mostrarOcultarTipos(){
 
 function selecionaOpcao(elemento){
     elementoSelecionado.innerHTML = `
-    ${elemento.innerText} <ion-icon name="chevron-down-outline"></ion-icon>
-    `
+    ${elemento.innerText} <ion-icon name="chevron-down-outline"></ion-icon>`
     mostrarOcultarTipos()
 
 }
@@ -79,7 +78,7 @@ function gerarImagens(link){
 }
 
 function plotarPokemon(dado){
-    console.log(dado.data['types']['0'])
+    // console.log(dado.data['types']['0'])
     // console.log(dado.data['sprites']['other']['dream_world'])
     article.innerHTML += `
     <div class="caixaPokemon">
@@ -93,7 +92,7 @@ function plotarPokemon(dado){
 function traduzir(palavra){
     
     for (let i = 0; i < tiposPokemons.length; i++){
-        console.log(primeiraLetraMaiuscula(palavra))
+        // console.log(primeiraLetraMaiuscula(palavra))
         if (primeiraLetraMaiuscula(palavra) === tiposPokemonsIngles[i]){
             return tiposPokemons[i]
         }
@@ -110,13 +109,29 @@ function primeiraLetraMaiuscula(palavra){
     return letras.join('')
 }
 
+function mostrarPokemonNaPagina(){
+    let promessa = axios.get(siteGeral)
+    promessa.then(criaPagina)
+    promessa.catch(mostraErroDaAPI)
+}
+
+// funções para alterar a quantidade de pokemons exibida
+function alteraLinkDeExibicao(){
+    let numPokemons = document.querySelector('.qtDePokemonsParaExibir input').value
+    // console.log(numPokemons)
+    siteGeral = `https://pokeapi.co/api/v2/pokemon/?offset=0&limit=${numPokemons}`
+    listaLinksDosPokemons = []
+    document.querySelector('article').innerHTML = ''
+    mostrarPokemonNaPagina()    
+}
+
 // -------- código principal ------//
 
 // criando as opções da barra de tipos
 criarNavBar()
 
 //  testando a API
-let promessa = axios.get(siteGeral)
-promessa.then(criaPagina)
-promessa.catch(mostraErroDaAPI)
+mostrarPokemonNaPagina()
 
+
+// setInterval(function(){console.log(siteGeral)}, 1000)

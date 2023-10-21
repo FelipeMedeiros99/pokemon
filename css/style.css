@@ -32,40 +32,65 @@ header{
 
 
     nav{
-        width: 130px;
+        width: 165px;
+        box-sizing: content-box;
         position: absolute;
         bottom: 3px;
         display: flex;
         align-items: center;
-        /* justify-content: left; */
         z-index: 2;
     }
 
-        .opcoesTipos{
-            margin-right: 10px;
+
+        .filtro{
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
+
+            .filtro span{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+        .opcoesTipos{
+            /* display: f   lex; */
+            /* align-items: center; */
+            /* justify-content: center; */
+            /* margin-right: 10px; */
+        }
+
+            .elementoSelecionado{
+                width: 100px
+            }
 
             .opcoesTipos p{
                 background-color: var(--cor-fundo-tipos);
                 display: flex;
                 align-items: center;
                 justify-content: left;
-                width: 75px;
+                width: 110px;
                 position: relative;
             }
 
     .opcoesTipos p ion-icon{
         position: absolute;
-        right: 0;
+        right: 0;        
     }
 
         .opcoesTipos p{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 0;
             border: outset;
+
         }
 
         nav button{
             position: absolute;
-            left: 85px;
+            right: 0px;
             border: outset;
         }
 
