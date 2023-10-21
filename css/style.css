@@ -1,16 +1,20 @@
 /* ----- gearal ----- */
 :root{
-    --cor-background-cabecalho: rgb(0, 141, 184, 0.7);
+    --cor-background-cabecalho: rgb(0, 141, 184);
     --cor-h1: rgb(179 178 165);
     --cor-fundo-tipos: rgb(204, 204, 204);
     --cor-fundo-tipos-selecionado: rgb(131, 131, 131);
     --cor-fundo-botao-selecionado: rgb(117, 101, 101);
     --cor-de-fundo-caixa: rgb(255, 255, 255, 0.5);
+    --cor-de-fundo-body: rgb(255, 204, 1);
+    --cor-de-borda: rgb(23, 40, 94);
 }
 
 body{
-    background-image: url('/imagens/wallpaper-56.png');
-    background-position: center;
+    /* background-image: url('/imagens/wallpaper-56.png');
+    background-position: center; */
+    background-color: var(--cor-de-fundo-body);
+    border:outset 10px var(--cor-de-borda);
 
     /* background-attachment: fixed; */
     /* background-repeat: no-repeat; */
