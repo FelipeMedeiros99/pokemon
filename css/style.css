@@ -2,7 +2,8 @@
 :root{
     --cor-background-cabecalho: rgb(243, 3, 3);
     --cor-h1: rgb(179 178 165);
-    --cor-fundo-tipos: rgb(100 100 100);
+    --cor-fundo-tipos: rgb(204, 204, 204);
+    --cor-fundo-tipos-selecionado: rgb(201, 4, 4);
 }
 
 /* ----- cabeçalho ----- */
@@ -27,13 +28,17 @@ header{
     }
 
 /* ----- principal ----- */
-main{}
+main{
+    position: relative;
+}
 
     nav{
-        position: relative;
+        position: absolute;
+        top: 0;
         display: flex;
         align-items: center;
         justify-content: left;
+        z-index: 2;
     }
 
         nav button{
@@ -43,18 +48,16 @@ main{}
         }
 
         .opcoesTipos{
-            display: block;
             width: 75px;
             margin-right: 10px;
         }
 
         .opcoesTipos p{
+            background-color: var(--cor-fundo-tipos);
             display: flex;
             align-items: center;
             justify-content: left;
             width: 75px;
-            /* margin-right: 10px; */
-            /* box-shadow: 1px 1px 1px var(--cor-fundo-tipos); */
             position: relative;
         }
 
@@ -63,9 +66,8 @@ main{}
             right: 0;
         }
 
-
-
-        main nav .tipos{
+        .tipos{
+            background-color: var(--cor-fundo-tipos);
             box-shadow: 1px 1px 1px var(--cor-fundo-tipos);
             width: 75px;
             display: none;
@@ -75,5 +77,33 @@ main{}
             display: block;
         }
 
+        .opcoesTipos p:hover{
+            background-color: var(--cor-fundo-tipos-selecionado);
+        }
+
+
+article{
+    position: absolute;
+    margin-top: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+    .caixaPokemon{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        border: outset;
+        margin-right: 3px;
+        margin-bottom: 3px;
+        width: 100px;
+    }
+
+    article img{
+        width: 75px;
+        height: 75px;
+    }
 
 /* -----  rodapé   ----- */
