@@ -1,6 +1,6 @@
 /* ----- gearal ----- */
 :root{
-    --cor-background-cabecalho: rgb(136 170 249);
+    --cor-background-cabecalho: rgb(0, 141, 184, 0.7);
     --cor-h1: rgb(179 178 165);
     --cor-fundo-tipos: rgb(204, 204, 204);
     --cor-fundo-tipos-selecionado: rgb(201, 4, 4);
@@ -8,6 +8,12 @@
     --cor-de-fundo-caixa: rgb(255, 255, 255, 0.5);
 }
 
+body{
+    background-image: url('/imagens/wallpaper-56.jpg');
+    background-position: center;
+    /* background-attachment: fixed; */
+    /* background-repeat: no-repeat; */
+}
 
 /* ----- cabeçalho ----- */
 header{
@@ -23,6 +29,41 @@ header{
 }
 
 
+    .qtDePokemonsParaExibir{
+        display: flex;
+        flex-direction: column;
+        /* background-color: aqua; */
+        align-items: center;
+        justify-content: center;
+        margin-right: 0;
+        /* border: outset; */
+        margin-bottom: 5px;
+    }
+
+        .qtDePokemonsParaExibir p{
+            font-size: 21px;
+            color: #FFCC01;
+            text-shadow: 4px 4px 0px #3560AD;
+
+            font-weight: 700;
+        }
+
+        .qtDePokemonsParaExibir input{
+            width: 80px;
+            border: none;
+            /* box-shadow: 2px 2px 4px rgb(1, 1, 1); */
+            
+        }
+
+        .qtDePokemonsParaExibir button{
+            border: outset;
+        }
+        .qtDePokemonsParaExibir button:hover{
+            background-color: var(--cor-fundo-botao-selecionado);
+            border-color: var(--cor-fundo-botao-selecionado);
+        }
+        
+
     header img{
         width: 300px;
     }
@@ -35,9 +76,9 @@ main{
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-image: url('/imagens/wallpaper-56.jpg');
+    /* background-image: url('/imagens/wallpaper-56.jpg');
     background-position: center;
-    background-attachment: fixed;
+    background-attachment: fixed; */
     /* background-size: cover; */
 }
 
@@ -96,7 +137,6 @@ nav{
         justify-content: center;
         margin-right: 0;
         border: outset;
-
     }
 
     nav button{
