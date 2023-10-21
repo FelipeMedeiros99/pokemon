@@ -28,8 +28,9 @@ header{
     align-items: center;
     justify-content: center;
     height: 150px;
-    width: 100%;
+    width: auto;
     background-color: var(--cor-background-cabecalho);
+    border: outset 10px var(--cor-background-cabecalho);
 
 }
 
@@ -49,7 +50,6 @@ header{
             font-size: 21px;
             color: #FFCC01;
             text-shadow: 4px 4px 0px #3560AD;
-
             font-weight: 700;
         }
 
