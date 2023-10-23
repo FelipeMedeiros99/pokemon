@@ -11,8 +11,10 @@
 }
 
 body{
-    /* background-image: url('/imagens/wallpaper-56.png');
-    background-position: center; */
+    background-image: url('/imagens/wallpaper-56.jpg');
+    background-position: center; 
+    background-size: cover;
+    background-attachment: fixed;
     background-color: var(--cor-de-fundo-body);
     border:outset 10px var(--cor-de-borda);
 
